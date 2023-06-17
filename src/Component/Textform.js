@@ -13,7 +13,7 @@ const handleUpClick = () => {
     // console.log("On Change")
     setText(event.target.value)
   }
-  const [text, setText] = useState("Enter text here");
+  const [text, setText] = useState("Enter text");
   // text="Enter your text here" //this is the wrong way to change the state
   // setText("It is the text to be formatted") // this is the new way to change the state
   return (
