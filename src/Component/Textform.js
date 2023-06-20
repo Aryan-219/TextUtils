@@ -62,6 +62,12 @@ export default function Textform(props) {
     setText(newText.join(" "))
     props.showAlert("Extra Spaces Have Been Removed", "success")
   }
+  const handleErase = () => {
+    setText("")
+    props.showAlert("Text Cleared", "success")
+
+  }
+  
   const [text, setText] = useState("Enter text");
   // text="Enter your text here" //this is the wrong way to change the state
   // setText("It is the text to be formatted") // this is the new way to change the state
@@ -96,13 +102,16 @@ export default function Textform(props) {
         <button className="btn btn-primary mx-2" onClick={handleExtraSpaces}>
           Remove Extra Spaces
         </button>
+        <button className="btn btn-primary mx-2" onClick={handleErase}>
+          Clear Text
+        </button>
       </div>
 
       {/* Below container is for previewing text */}
       <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
         <h1>Your text summary </h1>
         <p>
-          {text.split(" ").length} words and {text.length} characters
+          {text===""?0:text.split(' ').length} words and {text.length} characters
         </p>
         <p>
           You will read all the text in {0.008 * text.split(" ").length} minutes{" "}
@@ -113,3 +122,4 @@ export default function Textform(props) {
     </>
   );
 }
+// (text.charAt(text.length==" ")?text.split(" ").length-1:text.split(" ").length)
