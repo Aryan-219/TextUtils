@@ -1,15 +1,14 @@
 import Textform from "./Component/Textform";
 import Navbar from "./Component/Navbar";
 import Alert from "./Component/Alert";
-// import About from "./Component/About";
+import About from "./Component/About";
 import React from "react";
 import { useState } from "react";
-// import {
-//   BrowserRouter,
-//   Link,
-//   Route,
-//   Routes,
-// } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 function App() {
   const toggleMode = () => {
@@ -38,15 +37,15 @@ function App() {
   };
   return (
     <>
-      {/* <BrowserRouter> */}
+      <BrowserRouter>
         <Navbar title="Text Utils" aboutText="About-us" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
-        {/* <Routes> */}
-          {/* <Route path="/*" element={<Textform heading="Enter the text to analyze" showAlert={showAlert} mode={mode} />} /> */}
-          <Textform heading="Enter the text to analyze" showAlert={showAlert} mode={mode} />
-          {/* <Route path="/about/*" element={<About mode={mode} />} /> */}
-        {/* </Routes> */}
-      {/* </BrowserRouter> */}
+        <Routes>
+          <Route path="/*" element={<Textform heading="Enter the text to analyze" showAlert={showAlert} mode={mode} />} />
+          {/* <Textform heading="Enter the text to analyze" showAlert={showAlert} mode={mode} /> */}
+          <Route path="/about/*" element={<About mode={mode} />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

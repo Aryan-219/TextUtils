@@ -8,9 +8,9 @@
 //   )
 // }
 // all the above code came from a snippet : "rfc"
-// import {
-//   Link
-// } from "react-router-dom";
+import {
+  Link
+} from "react-router-dom";
 import PropTypes from "prop-types"; //impt snippet
 
 import React from "react";
@@ -38,16 +38,16 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="">
-              {/* <a className="nav-link active" aria-current="page" href="/Textform"> */}
+              {/* <a className="nav-link active" aria-current="page" href=""> */}
+              <Link className="nav-link active" aria-current="page" to="/Textform">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="">
-              {/* <a className="nav-link" href="/About"> */}
+              {/* <a className="nav-link" href=""> */}
+              <Link className="nav-link" to="/About">
                 {props.aboutText}
-              </a>
+              </Link>
             </li>
           </ul>
           {/* <form className="d-flex" role="search">
