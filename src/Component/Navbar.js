@@ -21,7 +21,7 @@ export default function Navbar(props) {
       className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme={props.mode}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" to="/">
+        <a className="navbar-brand" href="">
           {props.title}
         </a>
         <button
