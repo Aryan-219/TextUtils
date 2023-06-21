@@ -11,16 +11,27 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const toggleMode = () => {
+  const removeBackgroundClasses = () => {
+    document.body.classList.remove('bg-light')
+    document.body.classList.remove('bg-success')
+    document.body.classList.remove('bg-danger')
+    document.body.classList.remove('bg-primary')
+    document.body.classList.remove('bg-warning')
+    document.body.classList.remove('bg-dark')
+  }
+  const toggleMode = (cls) => {
+    removeBackgroundClasses()
+    console.log(cls)
+    document.body.classList.add('bg-'+ cls)
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#343a40";
-      showAlert(" Dark Mode Has Been Enabled", "success");
+      showAlert( `${cls} Mode Has Been Enabled`, "success");
       // document.title = "TextUtils-Dark Mode";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
-      showAlert(" Light Mode Has Been Enabled", "success");
+      showAlert(`${cls} Mode Has Been Enabled`, "success");
       // document.title = "TextUtils-Light Mode";
     }
   };
