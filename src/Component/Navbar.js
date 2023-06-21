@@ -1,13 +1,4 @@
-// import React from 'react'
-
-// export default function Navbar() {
-//   return (
-//     <div>
-
-//     </div>
-//   )
-// }
-// all the above code came from a snippet : "rfc"
+// Use the following code snippet : "rfc"
 import {
   Link
 } from "react-router-dom";
@@ -39,7 +30,7 @@ export default function Navbar(props) {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               {/* <a className="nav-link active" aria-current="page" href=""> */}
-              <Link className="nav-link active" aria-current="page" to="/Textform">
+              <Link className="nav-link " aria-current="page" to="/Textform">
                 Home
               </Link>
             </li>

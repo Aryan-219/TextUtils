@@ -22,14 +22,13 @@ export default function Textform(props) {
     props.showAlert("Converted to LowerCase", "success");
   };
   const handleCopy = () => {
-    // console.log("I am copy")
-    var text = document.getElementById("myBox")
-    text.select()
+    
+    // var text = document.getElementById("myBox")
+    // text.select()
     // text.setSelectionRange(0, 9999)
-    let a = text.value
-    navigator.clipboard.writeText(a)
-    document.getSelection().removeAllRanges()
-    // console.log(a)
+    navigator.clipboard.writeText(text)
+    // document.getSelection().removeAllRanges()
+    
     props.showAlert("Copied to clipBoard", "success");
 
   }
@@ -113,7 +112,7 @@ export default function Textform(props) {
       <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
         <h1>Your text summary </h1>
         <p>
-          {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters
+          {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters
         </p>
         <p>
           You will read all the text in {0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} minutes{" "}
