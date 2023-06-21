@@ -16,12 +16,12 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#343a40";
       showAlert(" Dark Mode Has Been Enabled", "success");
-      document.title = "TextUtils-Dark Mode";
+      // document.title = "TextUtils-Dark Mode";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert(" Light Mode Has Been Enabled", "success");
-      document.title = "TextUtils-Light Mode";
+      // document.title = "TextUtils-Light Mode";
     }
   };
   const [mode, setMode] = useState("light");
